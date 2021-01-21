@@ -11,15 +11,19 @@ const routes = [
     name: 'Staff',
     children: [{
       path: ':id',
-      component: Details,
-      children: [{
-        path: 'edit',
-        props: {
-          editMode: true
-        },
-        component: Details
-      }],
-    }],
+      props: {
+        editMode: false,
+      },
+      component: Details
+    },
+    {
+      path: ':id/edit',
+      props: {
+        editMode: true
+      },
+      component: Details
+    }
+    ],
     component: Staff,
   }
 ]

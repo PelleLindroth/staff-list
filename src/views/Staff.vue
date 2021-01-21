@@ -3,7 +3,11 @@
     <div class="list">
       <h1>Anställda</h1>
       <router-link :to="`/${user.id}`" v-for="user in users" :key="user.id">
-        {{ user.name }}
+        <img
+          class="small-icon"
+          src="../assets/user-icon.svg"
+          alt="User Icon"
+        />{{ user.name }}
       </router-link>
     </div>
 
@@ -21,33 +25,42 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .staff-wrapper {
   text-align: center;
   display: flex;
   align-content: center;
-  flex-direction: row;
-  margin-top: 100px;
-  max-width: 600px;
+  width: 80rem;
   height: 600px;
-  margin: auto;
-  background-color: rgb(238, 235, 235);
-}
+  background-color: #fff;
 
-.list {
-  background-color: darkgrey;
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  width: 50%;
-}
+  .list {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    padding: 5rem 0;
+    width: 50%;
 
-a {
-  margin-top: 30px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    a {
+      align-items: center;
+      display: flex;
+      margin-top: 30px;
+      text-decoration: none;
+      color: black;
+      justify-content: center;
+      margin: 1rem 0;
+      font-weight: bold;
+      padding: 1rem 3rem;
+
+      .small-icon {
+        margin-right: 1rem;
+      }
+    }
+
+    .router-link-active {
+      background: #9e9e9e;
+    }
+  }
 }
 </style>
